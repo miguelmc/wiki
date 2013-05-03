@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
 gem 'haml'
+gem 'devise'
 
 group :development do
   gem 'debugger'
@@ -17,8 +18,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', "~> 2.0"
-  gem 'capybara', "~> 2.0.2"
+  gem "rspec-rails", "~> 2.0"
+  gem 'capybara', "2.0.2"
   gem 'heroku'
   gem 'debugger'
   gem 'database_cleaner'
