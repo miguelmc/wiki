@@ -19,3 +19,13 @@ describe "signin" do
     page.should have_content t("devise.failure.invalid")
   end
 end
+describe "signout" do
+  before do
+    @user = FactoryGirl.create :user
+    sign_in @user
+  end
+  it "succesful" do
+    click_on t("users.session.button.logout")
+    page.should have_content t("devise.sessions.user.signed_out")
+  end
+end

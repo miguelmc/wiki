@@ -5,6 +5,9 @@ es:
         username: "Usuario"
         password: "Contraseña"
         submit: "Entrar"
+      button:
+        login: "Iniciar sesión"
+        logout: "Salir"
 
   errors:
     messages:
