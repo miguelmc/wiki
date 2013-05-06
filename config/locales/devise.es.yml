@@ -8,6 +8,7 @@ es:
       not_saved:
         one: "1 error evitó que este %{resource} fuera guardado:"
         other: "%{count} errores evitaron que este %{resource} fuera guardado:"
+      not_signed_in: "porfavor primero inicie sesión"
 
   devise:
     failure:
