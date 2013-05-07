@@ -1,0 +1,13 @@
+<h2>New article</h2>
+  <%= form_for(@article) do |f| %>
+    <div><%= f.label :title, t("articles.new.form.title") %><br />
+    <%= f.text_field :title %></div>
+    
+    <div><%= f.label :summary, t("articles.new.form.summary") %><br />
+    <%= f.text_field :summary %></div>
+    
+    <div><%= f.label :content, t("articles.new.form.content") %><br />
+    <%= f.text_field :content %></div>
+
+    <div><%= f.submit t("articles.new.form.submit")%></div>
+  <% end %>
