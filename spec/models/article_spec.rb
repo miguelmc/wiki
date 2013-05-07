@@ -15,8 +15,8 @@ require 'spec_helper'
 
 describe Article do
   let(:user) { FactoryGirl.create(:user) }
-  let (:article) { FactoryGirl.create(:article, user: user) }
-  
+  let(:article) { FactoryGirl.create(:article, user: user) }
+
   subject { article }
 
   it { should respond_to(:title) }
@@ -26,7 +26,7 @@ describe Article do
   it { should respond_to(:user) }
   its(:user) { should == user }
   it { should have_many(:logs) }
-
+  it { should have_many(:tags) }
 
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:summary) }
@@ -38,7 +38,7 @@ describe Article do
       expect do
         Article.new(user_id: user.id)
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end    
+    end
   end
 
 end

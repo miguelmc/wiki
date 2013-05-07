@@ -10,7 +10,7 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :content, :summary, :title
+  attr_accessible :content, :summary, :title, :tag_list
   validates :title, presence: true
   validates :summary, presence: true
   validates :content, presence: true
@@ -18,6 +18,8 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
   has_many :logs
+
+  acts_as_taggable
 
 
 end

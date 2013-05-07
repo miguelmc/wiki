@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
+
   def new
     @article = current_user.articles.build
   end
@@ -29,5 +30,6 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @logs = @article.logs
+    @tags = @article.tags.pluck(:name)
   end
 end

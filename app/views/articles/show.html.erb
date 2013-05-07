@@ -10,4 +10,7 @@
       <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
     <% end %>
   <% end %>
+  <% @tags.each do |t| %>
+    <div class="tag"> <%= t %> </div>
+  <% end %>
 </div>

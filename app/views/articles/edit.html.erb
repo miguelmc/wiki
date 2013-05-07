@@ -9,5 +9,8 @@
     <div><%= f.label :content, t("articles.edit.form.content") %><br />
     <%= f.text_field :content %></div>
 
+    <div><%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %></div>
+
     <div><%= f.submit t("articles.edit.form.submit")%></div>
   <% end %>
