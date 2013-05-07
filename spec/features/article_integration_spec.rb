@@ -23,5 +23,21 @@ describe 'new article' do
       page.should have_content t("devise.failure.unauthenticated")
     end
   end
-  
+end
+describe 'a created article' do
+  before do
+    @article = FactoryGirl.create :article
+    @user = FactoryGirl.create :user
+    sign_in @user
+    visit edit_article_path(@article)
+  end
+  context "succesfully edited" do
+    it "should update content" do
+      fill_in t("articles.edit.form.title"), with: "Article's new title"
+      fill_in t("articles.edit.form.summary"), with: "This is the new summary for the article"
+      fill_in t("articles.edit.form.content"), with: "Here you have the new content for the article."
+      click_on t("articles.edit.form.submit")
+      page.should have_content t("articles.edit.messages.success.saved")
+    end
+  end
 end

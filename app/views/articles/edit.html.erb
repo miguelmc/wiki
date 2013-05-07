@@ -1,0 +1,13 @@
+<h2>Edit Article</h2>
+  <%= form_for(@article) do |f| %>
+    <div><%= f.label :title, t("articles.edit.form.title") %><br />
+    <%= f.text_field :title %></div>
+    
+    <div><%= f.label :summary, t("articles.edit.form.summary") %><br />
+    <%= f.text_field :summary %></div>
+    
+    <div><%= f.label :content, t("articles.edit.form.content") %><br />
+    <%= f.text_field :content %></div>
+
+    <div><%= f.submit t("articles.edit.form.submit")%></div>
+  <% end %>
