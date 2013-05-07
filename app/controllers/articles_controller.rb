@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
   end
   def update
     @article = Article.find(params[:id])
-    if @article.update_attributes(params[:user])
+    if @article.update_attributes(params[:article])
       current_user.logs.create(article_id: @article.id)
       redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
     else
