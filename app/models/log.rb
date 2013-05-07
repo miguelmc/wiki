@@ -10,6 +10,7 @@
 #
 
 class Log < ActiveRecord::Base
+  attr_accessible :article_id
   belongs_to :article
   belongs_to :user
   validates :article_id, presence: true
