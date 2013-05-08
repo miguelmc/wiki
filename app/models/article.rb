@@ -20,4 +20,7 @@ class Article < ActiveRecord::Base
   has_many :logs
 
   acts_as_taggable
+
+  default_scope order: 'articles.created_at DESC'
+
 end

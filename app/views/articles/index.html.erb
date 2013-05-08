@@ -1,21 +1,5 @@
 <div class="articles"><% @articles.each do |article| %>
   <div class="article">
-    <div><%=article.title%></div>
-    <div><%=article.summary%></div>
-    <div><%=article.content%></div>
-    <div class="logs">
-      <% article.logs.each do |l| %>
-        <% if l == article.logs.last %>
-        <div class="log"> Last update at <%= l.created_at %> by <%= l.user.username %> </div>
-    <% else %>
-        <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
-    <% end %>
-    <% end %>
-      <div class="log"> Created at <%= article.created_at %> by <%= article.user.username %> </div>
-
-      <% article.tags.pluck(:name).each do |t| %>
-        <div class="tag"> <%= t %> </div>
-    <% end %>
-    </div>
+    <div><%= link_to article.title, article %></div>
   </div>
 <% end %> </div>
