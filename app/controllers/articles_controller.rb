@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
 
-  before_filter :authenticate_user!
-
+  before_filter :authenticate_user!, except: :index
+  def index
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag])
+    else
+      @articles = Article.all
+    end
+  end
   def new
     @article = current_user.articles.build
   end

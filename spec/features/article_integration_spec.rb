@@ -52,6 +52,18 @@ describe 'a created article' do
       end
     end
   end
+  context "in the index page" do
+    before do
+      @second_article =  FactoryGirl.create(:article, created_at: 2.years.ago)
+      visit articles_path
+    end
+    it "should show a list of recent articles" do
+       within ".articles" do
+        page.should have_css('.article', count: 2)
+      end
+
+    end
+  end
   context "when edited" do
     before do
       fill_in t("articles.edit.form.title"), with: "Article's new title"
