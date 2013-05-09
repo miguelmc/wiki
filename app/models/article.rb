@@ -1,5 +1,3 @@
-# == Schema Information
-#
 # Table name: articles
 #
 #  id         :integer          not null, primary key
@@ -20,5 +18,6 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
   has_many :logs
+
 
 end
