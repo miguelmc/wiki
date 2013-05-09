@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'pg'
 gem 'haml'
 gem 'devise'
+gem 'acts-as-taggable-on'
 
 group :development do
   gem 'debugger'

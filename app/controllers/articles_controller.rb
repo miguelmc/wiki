@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
+
   def new
     @article = current_user.articles.build
   end
@@ -19,7 +20,7 @@ class ArticlesController < ApplicationController
   end
   def update
     @article = Article.find(params[:id])
-    if @article.update_attributes(params[:user])
+    if @article.update_attributes(params[:article])
       current_user.logs.create(article_id: @article.id)
       redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
     else
@@ -29,5 +30,6 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @logs = @article.logs
+    @tags = @article.tags.pluck(:name)
   end
 end
