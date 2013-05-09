@@ -11,17 +11,6 @@
 #  updated_at :datetime         not null
 #
 
-# Table name: articles
-#
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  summary    :string(255)
-#  content    :string(255)
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Article < ActiveRecord::Base
   attr_accessible :content, :summary, :title, :tag_list
   validates :title, presence: true
