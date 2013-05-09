@@ -8,7 +8,10 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.create(commentable: @commentable, content: params[:comment][:content] )
     if @comment.save
-      redirect_to @commentable, notice: "Comment created."
+      respond_to do |format|
+        format.html {  redirect_to @commentable, notice: "Comment created." }
+        format.js
+      end
     else
       render :new
     end

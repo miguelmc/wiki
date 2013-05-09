@@ -19,7 +19,7 @@
 <span class="tag"> <%= t %> </span>
 <% end %>
 <hr />
-<%= link_to "New Comment", [:new, @commentable, :comment] %>
+<%= link_to "New Comment", [:new, @commentable, :comment], class: "new_comment_link", remote: true %>
 <div class="comments">
   <% @comments.each do |comment| %>
     <div class="comment">
