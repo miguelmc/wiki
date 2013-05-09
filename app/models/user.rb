@@ -33,5 +33,5 @@ class User < ActiveRecord::Base
 
   has_many :articles
   has_many :logs
-  has_many :comments, as: :commentable
+  has_many :comments
 end

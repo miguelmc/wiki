@@ -12,9 +12,11 @@
 #
 
 class Comment < ActiveRecord::Base
-  attr_accessible :content
-  
+  attr_accessible :content, :commentable
+
   validates :content, presence: true
+  validates :commentable, presence: true
+
 
   belongs_to :commentable, polymorphic: true
 

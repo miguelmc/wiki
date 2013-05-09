@@ -19,8 +19,10 @@ describe Comment do
   subject { comment }
 
   it { should respond_to(:content) }
+  it { should respond_to(:commentable) }
   it { should belong_to(:user) }
   it { should belong_to(:commentable) }
 
   it { should validate_presence_of(:content) }
+  it { should validate_presence_of(:commentable) }
 end

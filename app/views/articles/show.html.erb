@@ -12,10 +12,20 @@
     <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
 <% end %>
 <% end %>
-  <div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
-  <hr />
+<div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
+<hr />
 </div>
 <% @tags.each do |t| %>
-  <span class="tag"> <%= t %> </span>
+<span class="tag"> <%= t %> </span>
 <% end %>
-
+<hr />
+<%= link_to "New Comment", [:new, @commentable, :comment] %>
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <b><%= comment.user.username %></b>
+      <%= comment.content %>
+      <hr />
+    </div>
+  <% end %>
+</div>
