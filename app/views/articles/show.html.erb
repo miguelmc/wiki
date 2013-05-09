@@ -2,14 +2,15 @@
 <div><%=@article.summary%></div>
 <div><%=@article.content%></div>
 <div class="logs">
-  <div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
-  <% @logs.each do |l| %>
-    <% if l == @logs.last %>
+   <% @logs.each do |l| %>
+    <% if l == @logs.first %>
       <div class="log"> Last update at <%= l.created_at %> by <%= l.user.username %> </div>
     <% else %>
       <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
     <% end %>
   <% end %>
+  <div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
+
   <% @tags.each do |t| %>
     <div class="tag"> <%= t %> </div>
   <% end %>
