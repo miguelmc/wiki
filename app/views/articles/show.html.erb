@@ -5,13 +5,14 @@
 <div><%=@article.content%></div>
 <hr />
 <div class="logs">
-  <% @logs.each do |l| %>
-    <% if l == @logs.first %>
-    <div class="log"> Last update at <%= l.created_at %> by <%= l.user.username %> </div>
-<% else %>
+  <% if @logs.first %>
+    <div class="log"> Last update at <%= @logs.first.created_at %> by <%= @logs.first.user.username %> </div>
+  <% end %>
+
+  <% rest(@logs).each do |l| %>
     <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
-<% end %>
-<% end %>
+  <% end %>
+
 <div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
 <hr />
 </div>
