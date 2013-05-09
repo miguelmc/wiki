@@ -37,5 +37,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @logs = @article.logs
     @tags = @article.tags.pluck(:name)
+    @commentable = @article
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 end

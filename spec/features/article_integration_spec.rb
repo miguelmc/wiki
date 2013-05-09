@@ -78,3 +78,17 @@ describe 'a created article' do
     end
   end
 end
+describe "an existing article" do
+  context "when has comments" do
+    before do
+      @article = FactoryGirl.create(:article)
+      @comment = FactoryGirl.create(:comment, commentable: @article)
+      visit article_path @article
+    end
+    it "should show them" do
+       within ".comments" do
+        page.should have_css('.comment', count: 1)
+      end
+    end
+  end
+end
