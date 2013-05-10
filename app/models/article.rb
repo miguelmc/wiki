@@ -19,11 +19,11 @@ class Article < ActiveRecord::Base
   validates :user_id, presence: true
 
   belongs_to :user
-  has_many :logs
   has_many :comments, as: :commentable
 
   acts_as_taggable
 
   default_scope order: 'articles.created_at DESC'
 
+  audited 
 end

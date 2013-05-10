@@ -25,7 +25,6 @@ describe Article do
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
   its(:user) { should == user }
-  it { should have_many(:logs) }
   it { should have_many(:tags) }
 
   it { should validate_presence_of(:title) }

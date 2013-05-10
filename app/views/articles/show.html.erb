@@ -4,17 +4,15 @@
 <hr />
 <div><%=@article.content%></div>
 <hr />
+<div> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
 <div class="logs">
-  <% if @logs.first %>
-    <div class="log"> Last update at <%= @logs.first.created_at %> by <%= @logs.first.user.username %> </div>
+  <% @logs.each do |l| %>
+    <% if l == @logs.last %>
+      <div class="log"> Last update at <%= l.created_at %> by <%= l.user.username %> </div>
+    <% else %>
+      <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
+    <% end %>
   <% end %>
-
-  <% rest(@logs).each do |l| %>
-    <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
-  <% end %>
-
-<div class="log"> Created at <%= @article.created_at %> by <%= @article.user.username %> </div>
-<hr />
 </div>
 <% @tags.each do |t| %>
 <span class="tag"> <%= t %> </span>

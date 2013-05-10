@@ -27,18 +27,18 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update_attributes(params[:article])
-      current_user.logs.create(article_id: @article.id)
-      redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
+       redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
     else
       render 'edit'
     end
   end
   def show
     @article = Article.find(params[:id])
-    @logs = @article.logs
     @tags = @article.tags.pluck(:name)
     @commentable = @article
-    @comments = @commentable.comments
+    @comments = @commentable.comments.includes(:user)
     @comment = Comment.new
+    @logs = @article.audits.where("user_id IS NOT NULL").includes(:user) #'where' to make test pass 
+
   end
 end

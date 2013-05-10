@@ -9,6 +9,7 @@ gem 'pg'
 gem 'haml'
 gem 'devise'
 gem 'acts-as-taggable-on'
+gem "audited-activerecord", "~> 3.0"
 
 group :development do
   gem 'debugger'
