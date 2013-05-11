@@ -38,7 +38,6 @@ class ArticlesController < ApplicationController
     @commentable = @article
     @comments = @commentable.comments.includes(:user)
     @comment = Comment.new
-    @logs = @article.audits
-
+    @logs = @article.audits.where("action != ?", :create).include(:user)
   end
 end
