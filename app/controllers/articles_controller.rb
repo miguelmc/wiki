@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
     @commentable = @article
     @comments = @commentable.comments.includes(:user)
     @comment = Comment.new
-    @logs = @article.audits.where("user_id IS NOT NULL").includes(:user) #'where' to make test pass 
+    @logs = @article.audits
 
   end
 end
