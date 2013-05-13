@@ -38,8 +38,7 @@ class ArticlesController < ApplicationController
     @commentable = @article
     @comments = @commentable.comments.includes(:user)
     @comment = Comment.new
-    @logs = @article.logs
-    @last_log = @logs.first
-    @logs = @logs - [@last_log]
+    @last_log = @article.logs.first
+    @logs = @article.logs @last_log
   end
 end

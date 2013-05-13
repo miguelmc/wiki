@@ -27,7 +27,8 @@ class Article < ActiveRecord::Base
 
   audited
 
-  def logs
-    self.audits.updates.descending.includes(:user)
+  def logs(last_log = nil)
+    audits = self.audits.updates.descending.includes(:user)
+    last_log.nil? ? audits : audits.where("audits.id != ?", last_log.id)
   end
 end
