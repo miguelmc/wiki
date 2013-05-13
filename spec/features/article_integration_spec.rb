@@ -67,3 +67,26 @@ describe "an existing article" do
     end
   end
 end
+describe "search" do
+  before do
+    FactoryGirl.create(:article, tag_list:"ruby, heroku, a la github")
+    FactoryGirl.create(:article, tag_list:"heroku, a la github")
+    visit root_path
+  end
+  it "should show one article" do
+    fill_in "tag", with: "ruby"
+    click_on t("search.form.submit")
+    within ".articles" do
+      page.should have_css('.article', count: 1)
+    end
+  end
+  context "when user searches for no tag" do
+    it "should show all" do
+      fill_in "tag", with: ""
+      click_on t("search.form.submit")
+      within ".articles" do
+        page.should have_css('.article', count: 2)
+      end
+    end
+  end
+end

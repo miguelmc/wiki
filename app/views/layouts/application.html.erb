@@ -9,6 +9,10 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<%= form_tag articles_path, method: :get do %>
+  <%= text_field_tag :tag, params[:tag], placeholder: "Search by tag"  %>
+  <%= submit_tag  t("search.form.submit") %>
+<% end %>
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete %>
