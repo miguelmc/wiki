@@ -19,11 +19,16 @@ class Article < ActiveRecord::Base
   validates :user_id, presence: true
 
   belongs_to :user
-  has_many :logs
   has_many :comments, as: :commentable
 
   acts_as_taggable
 
   default_scope order: 'articles.created_at DESC'
 
+  audited
+
+  def logs(last_log = nil)
+    audits = self.audits.updates.descending.includes(:user)
+    last_log.nil? ? audits : audits.where("audits.id != ?", last_log.id)
+  end
 end

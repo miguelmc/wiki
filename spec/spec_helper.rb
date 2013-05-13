@@ -8,6 +8,9 @@ require 'rspec/autorun'
 require 'capybara/rspec'
 require 'capybara/rails'
 
+# deactivate auditing for testing
+Article.auditing_enabled = false
+  
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
