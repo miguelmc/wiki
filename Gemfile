@@ -10,6 +10,8 @@ gem 'haml'
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem "audited-activerecord", "~> 3.0"
+gem 'pygments.rb'
+gem 'redcarpet'
 
 group :development do
   gem 'debugger'
