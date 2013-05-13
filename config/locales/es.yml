@@ -27,6 +27,9 @@ es:
       messages:
         success:
           saved: "El articulo ha sido editado exitosamente"
+  search:
+    form:
+      submit: "Buscar"
 
   errors:
     messages:
