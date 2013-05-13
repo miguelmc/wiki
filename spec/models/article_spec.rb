@@ -39,5 +39,12 @@ describe Article do
       end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
     end
   end
-
+  describe "#logs" do
+    before do
+      article.audits << stub_model(Audited::Adapters::ActiveRecord::Audit)
+    end
+    it "should return logs" do
+      article.logs.size == 1
+    end
+  end
 end

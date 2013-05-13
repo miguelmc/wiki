@@ -25,5 +25,9 @@ class Article < ActiveRecord::Base
 
   default_scope order: 'articles.created_at DESC'
 
-  audited 
+  audited
+
+  def logs
+    self.audits.updates.descending.includes(:user)
+  end
 end
