@@ -94,6 +94,7 @@ GEM
       railties (>= 3.0.0)
     ffaker (1.16.0)
     ffi (1.8.1)
+    gravtastic (3.2.6)
     haml (4.0.2)
       tilt
     heroku (2.39.2)
@@ -227,6 +228,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   ffaker
+  gravtastic
   haml
   heroku
   jquery-rails
