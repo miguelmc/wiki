@@ -1,6 +1,6 @@
 <div><%= @article.title %></div>
 <hr />
-<div> Creado por <%=@article.user.username %> at <%= @article.created_at %> </div>
+<div><%= image_tag @article.user.gravatar_url %>Creado por <%=@article.user.username %> at <%= @article.created_at %> </div>
 <hr />
 <div><%= markdown @article.summary %></div>
 <hr />
