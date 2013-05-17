@@ -31,4 +31,11 @@ class Article < ActiveRecord::Base
     audits = self.audits.updates.descending.includes(:user)
     last_log.nil? ? audits : audits.where("audits.id != ?", last_log.id)
   end
+  def self.search(params = {})
+    if params[:tag].present? && !params[:tag].blank?
+      Article.tagged_with(params[:tag])
+    else
+      Article.all
+    end
+  end
 end
