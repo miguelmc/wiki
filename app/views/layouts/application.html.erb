@@ -2,24 +2,16 @@
 <html>
 <head>
   <title>Wiki</title>
-  <%= stylesheet_link_tag    "application", "jquery.tagsinput", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", :media => "all" %>
-  <%= javascript_include_tag "application", "jquery.tagsinput", "http://code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+  <%= stylesheet_link_tag    "application", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", :media => "all" %>
+  <%= javascript_include_tag "application", "http://code.jquery.com/ui/1.10.3/jquery-ui.js" %>
   <%= csrf_meta_tags %>
-  <script>
-  $(function() {
-    var availableTags = <%= raw ActsAsTaggableOn::Tag.pluck(:name) %>;
-    $("#tags").autocomplete({
-      source: availableTags
-    });
-  });
-  </script>
 </head>
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <div class="ui-widget">
   <%= form_tag articles_path, method: :get do %>
-    <%= text_field_tag :tags, params[:tag], placeholder: "Search by tag"  %>
+    <%= text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) } %>
   <%= submit_tag  t("search.form.submit") %>
 <% end %>
 </div>

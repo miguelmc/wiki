@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.tagsinput.min
 //= require_tree .
+//
+
+$(function() {
+  $("#tag").autocomplete({
+    source: $("#tag").data("tags")
+  });
+})
