@@ -8,10 +8,10 @@
 <hr />
 <div class="logs">
   <% if @last_log %>
-    <div class="log"> Last update at <%= @last_log.created_at %> by <%= @last_log.user.username %> </div>
+    <div class="log"> <%= link_to "Last update", article_audit_path(@article, @last_log)  %> at <%= @last_log.created_at %> by <%= @last_log.user.username %> </div>
   <% end %>
   <% @logs.each do |l| %>
-    <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
+    <div class="log"> <%= link_to "Modified", article_audit_path(@article, l)  %> at <%= l.created_at %> by <%= l.user.username %> </div>
   <% end %>
 </div>
 

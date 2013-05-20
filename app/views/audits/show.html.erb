@@ -1,0 +1,26 @@
+<div class="cambios">
+  <hr />
+  <div class="antes">
+     <% if @audit.audited_changes["title"] %>
+      Title: <%= markdown @audit.audited_changes["title"][0] %>
+    <% end %>
+    <% if @audit.audited_changes["summary"] %>
+      Summary: <%= markdown  @audit.audited_changes["summary"][0] %>
+    <% end %>
+    <% if @audit.audited_changes["content"] %>
+      Content: <%= markdown  @audit.audited_changes["content"][0] %>
+    <% end %>
+  </div>
+  <hr />
+  <div class="despues">
+     <% if @audit.audited_changes["title"] %>
+      Title: <%= markdown  @audit.audited_changes["title"][1] %>
+    <% end %>
+    <% if @audit.audited_changes["summary"] %>
+      Summary: <%= markdown  @audit.audited_changes["summary"][1] %>
+    <% end %>
+    <% if @audit.audited_changes["content"] %>
+      Content: <%= markdown  @audit.audited_changes["content"][1] %>
+    <% end %>
+  </div>
+</div>

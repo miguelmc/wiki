@@ -7,6 +7,7 @@ Wiki::Application.routes.draw do
   root :to =>  "articles#index"
   resources :articles do
     resources :comments
+    resources :audits
   end
 
   # The priority is based upon order of creation:
