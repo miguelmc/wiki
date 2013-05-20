@@ -47,4 +47,15 @@ describe Article do
       article.logs.size == 1
     end
   end
+   describe "search" do
+    before do
+       FactoryGirl.create(:article, user: user, tag_list: ["hola", "si"])
+       FactoryGirl.create(:article, user: user, tag_list: ["hola", "no"])
+       FactoryGirl.create(:article, user: user, tag_list: ["hola"])
+       FactoryGirl.create(:article, user: user, tag_list: ["si"])
+    end
+    it "should return article with those tags" do
+     Article.search(tag: 'hola').size.should eql 3
+    end
+  end
 end
