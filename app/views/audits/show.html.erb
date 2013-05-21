@@ -10,8 +10,7 @@
     <% if @audit.audited_changes["content"] %>
       Content: <%= markdown  @audit.audited_changes["content"][0] %>
     <% end %>
-  </div>
-  <hr />
+  </div><!--antes-->
   <div class="despues">
      <% if @audit.audited_changes["title"] %>
       Title: <%= markdown  @audit.audited_changes["title"][1] %>
@@ -22,5 +21,7 @@
     <% if @audit.audited_changes["content"] %>
       Content: <%= markdown  @audit.audited_changes["content"][1] %>
     <% end %>
-  </div>
-</div>
+  </div><!--despues-->
+  <div class="log-changes">
+  </div><!--log-->
+</div><!--cambios-->
