@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require jquery.tagsinput
+ *= require diffview
  *= require_tree .
  */

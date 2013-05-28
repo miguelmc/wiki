@@ -31,6 +31,20 @@ describe 'a created article' do
     sign_in @user
     visit edit_article_path(@article)
   end
+  context "when previewed", js: true do
+    before do
+      click_link "Preview"
+    end
+    it "should display article's information on the same page" do
+      within "#js-preview-container" do
+        page.should have_css('.title')
+        page.should have_css('.user-creation')
+        page.should have_css('.summary')
+        page.should have_css('.content')
+        page.should have_css('.tags')
+      end
+    end
+  end
   context "succesfully edited" do
     it "should update content" do
       fill_in t("articles.edit.form.title"), with: "Article's new title"

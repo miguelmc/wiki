@@ -37,4 +37,11 @@ class ArticlesController < ApplicationController
     @last_log = @article.logs.first
     @logs = @article.logs @last_log
   end
+
+  def preview
+    @article = current_user.articles.build(params[:article])
+    respond_to do |format|
+      format.js
+    end
+  end
 end

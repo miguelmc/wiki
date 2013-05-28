@@ -3,11 +3,14 @@ Wiki::Application.routes.draw do
   get "comments/new"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-
   root :to =>  "articles#index"
   resources :articles do
     resources :comments
+    resources :audits
   end
+
+  post 'article/preview' => 'articles#preview'
+  put 'article/preview' => 'articles#preview'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

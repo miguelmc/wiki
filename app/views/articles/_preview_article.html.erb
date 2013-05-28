@@ -1,0 +1,15 @@
+<div class="title"><%= article.title %></div>
+<hr />
+<div class="user-creation"><%= image_tag article.user.gravatar_url %>Creado por <%=article.user.username %> at <% if article.created_at? %><%= article.created_at %><% else %><%= Time.now.utc %><% end %> </div>
+<hr />
+<div class="summary"><%= markdown article.summary %></div>
+<hr />
+<div class="content"><%= markdown article.content %></div>
+<hr />
+<div class="tags">
+  <% article.tag_list.each do |t| %>
+    <span class="tag"> <%= t %> </span>
+  <% end %>
+</div>
+<hr />
+

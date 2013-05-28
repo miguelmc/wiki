@@ -25,7 +25,7 @@ class Article < ActiveRecord::Base
 
   default_scope order: 'articles.created_at DESC'
 
-  audited
+  audited except: :tag_list
 
   def logs(last_log = nil)
     audits = self.audits.updates.descending.includes(:user)

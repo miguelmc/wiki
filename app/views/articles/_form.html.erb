@@ -1,4 +1,4 @@
-  <%= form_for(@article) do |f| %>
+<%= form_for(@article, html: {id: 'js-article-form'}) do |f| %>
     <div><%= f.label :title, t("articles.new.form.title") %><br />
     <%= f.text_field :title %></div>
 
@@ -18,3 +18,7 @@
 
     <div><%= f.submit t("articles.new.form.submit")%></div>
   <% end %>
+  <div><%=link_to "Preview", "javascript:void(0)", id: "js-preview"%></div>
+  <div id="js-preview-container">
+    
+  </div>
