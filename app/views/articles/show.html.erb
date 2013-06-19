@@ -1,1 +1,32 @@
-<%= render @article, tags: @tags, commentable: @commentable, comments: @comments, comment: @comment, last_log: @last_log, logs: @logs  %>
+<div><%= @category.name %> </div>
+<div><%= @article.title %></div>
+<hr />
+<div><%= image_tag @article.user.gravatar_url %>Creado por <%= @article.user.username %> at <%= @article.created_at %> </div>
+<hr />
+<div><%= markdown @article.summary %></div>
+<hr />
+<div><%= markdown @article.content %></div>
+<hr />
+<div class="logs">
+  <% if @last_log %>
+    <div class="log"> Last update at <%= @last_log.created_at %> by <%= @last_log.user.username %> </div>
+  <% end %>
+  <% @logs.each do |l| %>
+    <div class="log"> Modified at <%= l.created_at %> by <%= l.user.username %> </div>
+  <% end %>
+</div>
+
+<% @tags.each do |t| %>
+  <span class="tag"> <%= t %> </span>
+<% end %>
+<hr />
+<%= link_to "New Comment", [:new, @commentable, :comment], class: "new_comment_link", remote: true %>
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <b><%= comment.user.username %></b>
+      <%= markdown comment.content %>
+      <hr />
+    </div>
+  <% end %>
+</div>
