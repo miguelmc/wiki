@@ -12,13 +12,14 @@
 #
 
 class Article < ActiveRecord::Base
-  attr_accessible :content, :summary, :title, :tag_list
+  attr_accessible :content, :summary, :title, :tag_list, :category_id
   validates :title, presence: true
   validates :summary, presence: true
   validates :content, presence: true
   validates :user_id, presence: true
 
   belongs_to :user
+  belongs_to :category
   has_many :comments, as: :commentable
 
   acts_as_taggable

@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  username               :string(255)
+#  category_id            :integer
 #
 
 class User < ActiveRecord::Base

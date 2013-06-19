@@ -15,6 +15,9 @@
       })
     </script>
     <%= f.text_field :tag_list %></div>
+    
+    <div><%= f.label :category_id, t("articles.new.form.category") %><br />
+      <%= f.collection_select :category_id, Category.all, :id, :name, prompt: t("articles.new.form.prompt") %> </div>
 
     <div><%= f.submit t("articles.new.form.submit")%></div>
   <% end %>

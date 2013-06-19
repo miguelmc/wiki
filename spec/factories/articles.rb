@@ -19,5 +19,9 @@ FactoryGirl.define do
     summary "I have learn a lot in this testing excersice"
     content "To really test an article the right way you have to write good test cases, if you don't do it it will be something you'll have the blame for ever and ever."
     user { FactoryGirl.create(:user) }
+
+    factory :article_with_category do
+      category { FactoryGirl.create(:category) }
+    end
   end
 end

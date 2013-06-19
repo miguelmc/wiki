@@ -36,6 +36,7 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     @last_log = @article.logs.first
     @logs = @article.logs @last_log
+    @category = @article.category
   end
 
   def preview

@@ -11,17 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511012203) do
+ActiveRecord::Schema.define(:version => 20130619215309) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "summary"
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
   end
 
+  add_index "articles", ["category_id"], :name => "index_articles_on_category_id"
   add_index "articles", ["user_id", "created_at"], :name => "index_articles_on_user_id_and_created_at"
 
   create_table "audits", :force => true do |t|
@@ -44,6 +46,12 @@ ActiveRecord::Schema.define(:version => 20130511012203) do
   add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
   add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
   add_index "audits", ["user_id", "user_type"], :name => "user_index"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.text     "content"

@@ -26,6 +26,7 @@ describe Article do
   it { should respond_to(:user) }
   its(:user) { should == user }
   it { should have_many(:tags) }
+  it { should belong_to(:category) }
 
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:summary) }
