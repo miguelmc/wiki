@@ -1,0 +1,662 @@
+//Reset
+@import 'reset';
+
+//Variables
+@import 'variables';
+
+//Typography
+@import 'typography';
+
+//Containers
+@import 'containers';
+
+//Buttons
+@import 'buttons';
+
+//Separators
+@import 'separators';
+
+//Fonts
+@import 'fonts';
+
+//Plugins
+//----------------------------
+
+//Flip
+@import 'flip';
+
+//Diffview
+@import 'diffview';
+
+//Tags
+@import 'jquery.tagsinput';
+
+//PYgments
+@import 'pygment';
+
+//Compass
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+//Style
+body {
+	background: url(red.jpg) no-repeat #cb2230;
+	background-size: 100% 100%;
+}
+
+// Header & Nav
+//--------------------------------------------
+.header {
+	padding: 30px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	margin-bottom: 50px;
+	
+	.logo {
+		display: inline-block;
+	}
+
+	.header-menu {
+		display: inline-block;
+		float: right;
+
+		a {
+			display: inline-block;
+			color: #fff;
+			text-decoration: underline;
+			float: left;
+			position: relative;
+			top: 10px;
+			left: -25px;
+			font-weight: 600;
+		}
+
+		.search-box {
+			display: inline-block;
+			float: right;
+			position: relative;
+
+			.search {
+				padding: 10px 30px 10px 10px;
+				border-radius: 3px 0px 0px 3px;
+				border: none;
+				transition: all .5s ease;
+				min-width: 170px;
+
+				&:focus {
+					border: none;
+					width: 400px;
+				}
+			}
+
+			.icon {
+				background: url(search.png) $dark-bg no-repeat;
+				background-position: center;
+				padding: 20px 20px;
+				position: relative;
+				float: right;
+				top: -38px;
+				border-radius: 0px 3px 3px 0px;
+			}
+		}
+	}
+}
+
+// Sidebar & Themes Nav
+//--------------------------------------------
+
+.page {
+	position: relative;
+
+	.col-1 {
+		width: 220px;
+		float: left;
+    margin-right: 80px;
+	}
+
+	.col-2 {
+		width: 60%;
+		/*//width: 740px;*/
+		float: left;
+    margin-bottom: 20px;
+	}
+
+	.unit {
+		width: 100%; /*640px;*/
+		/*float: right;*/
+	}
+}
+
+.side-menu {
+	width: 220px;
+	background: $content-bg;
+	border-radius: 3px;
+	display: inline-block;	
+	overflow: hidden;
+
+	.title {
+		background: $dark-bg;
+		position: relative;
+		text-align: center;
+		padding: 15px 85px;
+		color: #fff;
+		font-weight: 700;
+		display: block;
+	}
+
+	a {
+		display: block;
+		padding: 20px 10px 20px 30px;
+		color: $text-color;
+		font-weight: 700;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		background: url(arrow.png) 90% 55% no-repeat;
+	}
+
+	.actionbutton {
+		background: url(write.png) 90% 55% no-repeat $action-bg;
+		color: #fff;
+		font-weight: 100;
+	}
+}
+
+// Sub Menu
+//--------------------------------------------
+
+
+// Article Content
+//--------------------------------------------
+
+.article-container {
+	background: $content-bg;
+	border-radius: 3px;
+	margin-bottom: 30px;
+	border-radius: 5px 5px 3px 3px;
+
+	.header-content {
+		background: $dark-bg;
+		position: relative;
+		border-radius: 4px 4px 0px 0px;
+
+		.user-avatar {
+			left: -55px;
+			top: 10px;
+		}
+
+		.article-title {
+			color: $content-bg;
+		}
+
+		.date{
+			color: #5a5a5a;
+		}
+
+		.username {
+			color: $content-bg;
+		}
+	}
+
+	.info-article {
+		background: $subtitle-bg;
+		padding: 20px 10px 20px 80px;
+		
+		.leasson {
+			color: #787878;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 0.8em;
+		}
+
+		.tags {
+			margin-top: 10px; 
+		}
+	}
+
+	.article-content {
+		padding: 0px 30px;
+		margin-bottom: 50px;
+	}
+
+	color: $text-color;
+
+	.feed {
+		border-top: 1px solid rgba(0,0,0,0.2);
+		margin-bottom: 40px;
+
+		span {
+			display: block;
+			padding: 5px 30px;
+		}
+	}
+	
+	.buttons {
+		text-align: right;
+	}
+
+	.recomendar {
+		background: $action-bg;
+		border-radius: 0px 0px 3px 0px;
+		margin-left: -4px;
+	}
+
+	.comentar {
+		background: #d1d1d1;
+	}
+}
+
+// Comentarios
+//--------------------------------------------
+
+.coments-container {
+	background: $content-bg;
+	padding: 30px;
+	border-radius: 3px;
+
+	h3 {
+		display: inline-block;
+		font-size: 1.5em;
+	}
+
+	a {
+		text-decoration: underline;
+		color: $action-bg;
+		font-size: 1.5em;
+		float: right;
+	}
+
+	.coment {
+		padding: 10px 0px 0px 120px;
+		position: relative;
+		min-height: 120px;
+		
+		.user-avatar {
+			border-radius: 50%;
+			display: inline-block;
+			float: left;
+			position: absolute;
+			left: 0px;
+		}
+		.username {
+			color: $action-bg;
+			display: block;
+		}
+
+		p {
+			display: inline-block;
+			margin: 10px 0px;
+		}
+	}
+}
+
+// Write Article
+//--------------------------------------------
+
+$default-transition-duration: 400ms;
+$perspective: 700;
+
+.write {
+	display: block;
+  	position: relative;
+  	z-index: 1000;
+  	width: 100px; 
+  	height: 100px;
+
+  	.write-container,
+  	.prev-container {
+    	-webkit-backface-visibility:hidden; /* Chrome and Safari */
+		-moz-backface-visibility:hidden; /* Firefox */
+		-ms-backface-visibility:hidden; 
+    	@include single-transition(transform);
+    	display: block;
+    	height: 100%;
+    	position: absolute;
+    	width: 100%; 
+  	}
+
+  	.write-container {
+    	@include transform3d(perspective($perspective) rotateY(0));
+    	z-index: 900;
+  	}
+
+  	.prev-container {
+    	@include rotateY(-180deg);
+     	z-index: 800;
+  	}
+
+  	&:hover {
+    	.write-container { 
+      		@include transform(rotateY(180deg)); //No 3D fallback
+      		@include transform3d(perspective($perspective) rotateY(180deg)); 
+    	}
+    	.prev-container { 
+      		z-index: 950; //No transform fallback
+      		@include transform(rotateY(0deg)); //No 3D fallback
+      		@include transform3d(perspective($perspective) rotateY(0deg)); 
+  		}
+	}
+}
+.article-container {
+		
+		.header-content {
+			padding: 60px 10px 40px 80px !important;
+		}
+
+		input.article-title {
+			background: $dark-bg;
+			border: none;
+			display: block;
+			width: 450px;
+			font-size: 1.5em;
+		}
+
+		.info-article {
+			margin-bottom: 50px;
+		}
+
+		input.leassons {
+			width: 500px;
+			height: 100px;
+			background: $subtitle-bg;
+			border: 0px;
+			display: block;
+		}
+
+		input.tags-form{
+			background: $subtitle-bg;
+			border: 0px;
+			width: 400px;
+		}
+
+		textarea {
+			width: 578px;
+			height: 600px;	
+			border: 1px dashed rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+
+		.instructions {
+			color: rgba(0,0,0,0.5);
+			display: block;
+			padding: 0px 25px;
+			
+			.feature {
+				display: inline-block;
+				padding: 15px;
+				vertical-align: top;
+			}
+		}
+
+		.buttons-publish {
+			text-align: right;
+		}
+
+		.preview {
+			background: #d1d1d1;
+		}
+	}
+	
+// Login
+//--------------------------------------------
+
+	.login {
+		background: rgba(0,0,0,0.8);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0px;
+		overflow: hidden;
+
+		.close {
+			width: 20px;
+			height: 20px;
+			display: block;
+			padding: 10px;
+			background: $action-bg;
+			position: relative;
+			top: -40px;
+			left: 600px;
+			border-radius: 0px 3px 0px 0px;
+		}
+
+		.login-container {
+			background: $content-bg;
+			width: 600px;
+			margin: 100px auto;
+			padding: 40px;
+			border-radius: 5px;
+			text-align: center;
+		}
+
+		input {
+			display: block;
+			width: 300px;
+			margin: 10px auto;
+			padding: 20px;
+			background: rgba(0,0,0,0.1);
+			border-radius: 3px;
+			border: none;
+		}
+
+		input[type="submit"] {
+			background: $action-bg;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+// Home
+//--------------------------------------------
+
+.news {
+	padding: 30px;
+	background: $dark-bg;
+	color: #fff;
+	border-radius: 3px;
+	width: 100%;
+
+	h2 {
+		font-weight: 300;
+		font-size: 2em;
+		margin: 20px 0px;
+	}
+
+	a {
+		color: #fff;
+		margin: 10px 0px;
+		display: block;
+	}
+	
+	span {
+		font-style: italic;
+	}
+
+	b {
+		opacity: 0.7;
+		font-weight: 100;
+	}
+
+	.sep {
+		margin: 10px 0px;
+	}
+
+	.column {
+		margin-top: 30px;
+		width: 45%;
+	}
+
+	.recientes {
+		&:after {
+			content:url(time.png);
+			opacity: 0.3;
+			position: relative;
+			top: 3px;
+			padding-left: 5px;
+		}
+	}
+}
+
+// Links
+//--------------------------------------------
+
+.links {
+	display: inline-block;
+	color: #fff;
+  width: 100%;
+
+
+	.link-item {
+		background: $dark-bg;
+		position: relative;
+		padding: 30px 0px 30px 100px;
+		border-radius: 3px;
+		margin: 0px 0px 20px 0px;
+
+		h2 {
+			color: #fff;
+		}
+
+		.user-avatar {
+			top: 20px;
+			left: -30px
+		}
+
+		.info {
+			color: #545454;
+		}
+
+		.username {
+			color: #fff;
+			display: inline-block;
+		}
+
+		.tags {
+			margin-top: 10px;
+		}
+	}
+}
+
+
+.header {
+	.header-menu {
+		@media (max-width: 500px){
+				float: none;
+				width: 100%;
+				overflow: hidden;
+		}
+		a {
+			@media (max-width: 500px){
+				display: none;
+			}
+		}
+	}
+
+	.logo {
+		@media (max-width: 500px){
+			width: 100%;
+			text-align: center;
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+
+	.search-box {
+		@media (max-width: 500px){
+			width: 100%;
+			float: none;
+			margin: 0 auto;
+			display: block;
+		}
+
+		input {
+			@media (max-width: 500px){
+				transition: none;
+				width: 100%;
+				text-align: center;
+			}
+		}
+
+		span {
+			@media (max-width: 500px){
+				display: none;
+			}
+		}
+	}
+}
+
+.col-1 {
+	@media (max-width: 500px){
+		width: 100% !important;
+	}
+
+	.side-menu {
+		@media (max-width: 500px){
+			width: 100%;
+		}
+	}
+}
+
+.col-2 {
+	@media (max-width: 500px){
+		width: 100% !important;
+	}
+
+	.unit {
+		@media (max-width: 500px){
+			width: 100%;
+		}
+	}
+
+	.article-container {
+		.header-content {
+			@media (max-width: 500px){
+				padding: 60px 10px 40px 30px !important;
+			}
+
+			.user-avatar {
+				@media (max-width: 500px){
+					display: none;
+				}
+			}
+		}
+
+		.info-article {
+			@media (max-width: 500px){
+				padding: 20px 10px 40px 30px !important;	
+			}
+		}
+	}
+
+	.coments-container {
+		.coment {
+			@media (max-width: 500px){
+				padding: 20px;
+			}
+			.user-avatar {
+				@media (max-width: 500px){
+					display: none;
+				}		
+			}
+		}
+	}
+}
+
+.links {
+	@media (max-width: 500px){
+		width: 100%;
+	}	
+	.link-item {
+		@media (max-width: 500px){
+			margin: 0px;
+			padding: 30px 0px 30px 30px !important;
+			border-bottom: 1px solid rgba(255,255,255,0.2);
+		}	
+	}
+
+	.user-avatar {
+		@media (max-width: 500px){
+			display: none;
+		}	
+	}
+}
+

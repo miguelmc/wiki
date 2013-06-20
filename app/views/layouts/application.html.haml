@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %title Icalia Wiki
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag    "application", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", :media => "all"
+    = javascript_include_tag "application", "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
+    = csrf_meta_tags
+  %body
+    .header
+      .container.center
+        = link_to root_path, class: 'logo' do
+          = image_tag 'logo.png'
+        %nav.header-menu
+          - if user_signed_in?
+            Logged in as
+            %strong= current_user.username
+            = link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete
+          - else
+            = link_to t("users.session.button.login"), new_user_session_path
+          .search-box
+            = form_tag articles_path, method: :get do
+              = text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
+              %span.icon 
+    %section.page.container.center
+      .col-1
+        %nav.side-menu
+          %span.title Temas
+          - Category.all.each do |category|
+            = link_to category.name, 'javascript:void(0)'
+          = link_to "Escribir Artículo", new_article_path, class: 'actionbutton'
+      .col-2
+        .unit
+          = yield
+    -#%p.notice= notice
+    -#%p.alert= alert
+    -#.ui-widget
+      -#= form_tag articles_path, method: :get do
+        -#= text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }
+        -#= submit_tag  t("search.form.submit")
+    -#- if user_signed_in?
+      -#Logged in as
+      -#= succeed "." do
+        -#%strong= current_user.email
+      -#= link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete
+    -#- else
+      -#= link_to t("users.session.button.login"), new_user_session_path

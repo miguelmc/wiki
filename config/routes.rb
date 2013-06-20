@@ -3,7 +3,7 @@ Wiki::Application.routes.draw do
   get "comments/new"
 
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  root :to =>  "articles#index"
+  root :to =>  "static_pages#home"
   resources :articles do
     resources :comments
     resources :audits
