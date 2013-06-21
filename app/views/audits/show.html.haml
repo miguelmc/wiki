@@ -1,0 +1,22 @@
+.cambios
+  .antes
+    - if @audit.audited_changes["title"]
+      Title:
+      = markdown @audit.audited_changes["title"][0]
+    - if @audit.audited_changes["summary"]
+      Summary:
+      = markdown  @audit.audited_changes["summary"][0]
+    - if @audit.audited_changes["content"]
+      Content: 
+      = markdown  @audit.audited_changes["content"][0]
+  .despues
+    - if @audit.audited_changes["title"]
+      Title: 
+      = markdown  @audit.audited_changes["title"][1]
+    - if @audit.audited_changes["summary"]
+      Summary:
+      = markdown  @audit.audited_changes["summary"][1]
+    - if @audit.audited_changes["content"]
+      Content: 
+      = markdown  @audit.audited_changes["content"][1]
+  .log-changes

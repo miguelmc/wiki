@@ -1,0 +1,11 @@
+.new_comment
+  =form_for [@commentable, @comment],class: 'comment_form', remote: true do |f| 
+    -if @comment.errors.any?
+      .error_messages
+        %h2 Please correct the following errors.
+        %ul
+          - @comment.errors.full_messages.each do |msg|
+            %li= msg
+    .content
+      = f.text_area :content
+      = f.submit
