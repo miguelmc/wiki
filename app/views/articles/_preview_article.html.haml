@@ -5,7 +5,7 @@
   Creado por
   = article.user.username
   el
-  //= if article.created_at? article.created_at : Time.now.utc
+  = l article.created_at ? article.created_at : Time.now
 .summary
   = markdown article.summary
 .content
