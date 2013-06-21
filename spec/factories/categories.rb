@@ -12,6 +12,6 @@
 
 FactoryGirl.define do
   factory :category do
-    name "Rails"
+    name { Faker::Name.name }
   end
 end
