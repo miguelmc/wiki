@@ -20,6 +20,8 @@
 
 $(function() {
 
+  $('#article_tag_list').tagsInput();
+
   function diff() {
     // get the baseText and newText values from the two textboxes, and split them into lines
     var base = difflib.stringAsLines($(".antes").text());

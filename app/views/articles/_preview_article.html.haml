@@ -1,0 +1,15 @@
+.title
+  = article.title
+.user-creation
+  = image_tag article.user.gravatar_url
+  Creado por
+  = article.user.username
+  el
+  //= if article.created_at? article.created_at : Time.now.utc
+.summary
+  = markdown article.summary
+.content
+  = markdown article.content
+.tags
+  - article.tag_list.each do |t|
+    %span.tag
