@@ -55,6 +55,18 @@ body {
 		display: inline-block;
 	}
 
+	.welcome {
+		color: #fff;
+		position: relative;
+		top: 25px;
+	}
+
+	strong {
+		position: relative;
+		top: 25px;
+		font-style: italic;
+	}
+
 	.header-menu {
 		display: inline-block;
 		float: right;
@@ -68,6 +80,15 @@ body {
 			top: 10px;
 			left: -25px;
 			font-weight: 600;
+		}
+
+		.logout {
+			color: rgba(255,255,255,0.4);
+			position: relative;
+			top: 25px;
+			left: 0px;
+			float: none;
+			margin: 0px 20px;
 		}
 
 		.search-box {
@@ -225,6 +246,11 @@ body {
 		span {
 			display: block;
 			padding: 5px 30px;
+
+			a {
+				color: $action-bg;
+				font-weight: bold;
+			}
 		}
 	}
 	
@@ -360,14 +386,28 @@ $perspective: 700;
 			display: block;
 		}
 
-		input.tags-form{
-			background: $subtitle-bg;
+		.tagsinput{
+			background: $subtitle-bg !important;
 			border: 0px;
 			width: 400px;
+
+			 span.tag {
+			 	padding: 10px;
+				background: #c7ccd4;
+				font-size: 0.7em;
+				font-weight: 600;
+				border-radius: 3px;
+				color: #616780;
+				border: none;
+
+				a {
+					color: #616780;
+				}
+			 }
 		}
 
 		textarea {
-			width: 578px;
+			width: 100%;
 			height: 600px;	
 			border: 1px dashed rgba(0,0,0,0.2);
 			border-radius: 5px;
@@ -403,6 +443,7 @@ $perspective: 700;
 		height: 100%;
 		position: fixed;
 		top: 0px;
+		left: 0px;
 		overflow: hidden;
 
 		.close {
@@ -438,6 +479,7 @@ $perspective: 700;
 
 		input[type="submit"] {
 			background: $action-bg;
+			color: #fff;
 
 			&:hover {
 				cursor: pointer;
@@ -495,6 +537,10 @@ $perspective: 700;
 		}
 	}
 }
+
+// Links
+//--------------------------------------------
+
 
 // Links
 //--------------------------------------------

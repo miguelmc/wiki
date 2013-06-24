@@ -14,22 +14,24 @@
       - @tags.each do |tag_name|
         %span.tag= tag_name
   .article-content
-    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum asperiores placeat molestiae veritatis tempora molestias dolorum fuga voluptates numquam itaque praesentium quaerat soluta distinctio quidem eaque quibusdam dolor? Officia eaque.
-  .logs
+    %p= @article.content
+  .feed
     -if @last_log
-      .log
+      %span 
         =link_to "Ultima modificación", article_audit_path(@last_log)
         el
         = l @last_log.created_at
         por
         = @last_log.user.username
     -@logs.each do |l|
-      =link_to "Modificado", article_audit_path(l)
-      el
-      =l l.created_at
-      por
-      =l.user.username
-  =link_to "New Comment", [:new, @commentable, :comment], class: "new_comment_link", remote: true
+      %span 
+        =link_to "Modificado", article_audit_path(l)
+        el
+        =l l.created_at
+        por
+        =l.user.username
+  .buttons
+    =link_to "New Comment", [:new, @commentable, :comment], class: "btn recomendar", remote: true
   .comments
     - @comments.each do |comment|
       .comment

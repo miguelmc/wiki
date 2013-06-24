@@ -13,9 +13,9 @@
           = image_tag 'logo.png'
         %nav.header-menu
           - if user_signed_in?
-            Logged in as
+            %span.welcome Logged in as
             %strong= current_user.username
-            = link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete
+            = link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete, class: 'logout'
           - else
             = link_to t("users.session.button.login"), new_user_session_path
           .search-box
