@@ -31,8 +31,8 @@
         por
         =l.user.username
   .buttons
-    =link_to "New Comment", [:new, @commentable, :comment], class: "btn recomendar", remote: true
-  .comments
+    =link_to "New Comment", [:new, @commentable, :comment], id: "js-new-comment-link", class: "btn recomendar", remote: true
+  #js-comments
     - @comments.each do |comment|
       .comment
         %b= comment.user.username
