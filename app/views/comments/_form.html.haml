@@ -6,6 +6,6 @@
         %ul
           - @comment.errors.full_messages.each do |msg|
             %li= msg
-    .content
+    .content-comment
       = f.text_area :content
       = f.submit

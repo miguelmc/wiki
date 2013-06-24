@@ -6,27 +6,26 @@
       %span.leasson Agrega una pequeña descripcion de tu articulo:
       = f.text_field :summary, class: 'leassons', :placeholder => "¿Qué aprendiste o aprenderas a leer este articulo?"
       = f.text_field :tag_list, class: "tags-form"
+    .category
+    = f.label :category_id, t("articles.new.form.category")
+    = f.collection_select :category_id, Category.all, :id, :name, prompt: t("articles.new.form.prompt")
   .article-content
     = f.text_area :content
-  .category
-    = f.label :category_id, t("articles.new.form.category")
-    %br
-    = f.collection_select :category_id, Category.all, :id, :name, prompt: t("articles.new.form.prompt")
-    .instructions
-      %span Recuerda que puedes utilizar Markdown para estilizar el conenido.
-      %br/ 
-      %span.feature
-        %b Negritas:
-        *example*
-      %span.feature
-        %b Título
-        *example*
-      %span.feature
-        %b Negritas:
-        *example*
-      %span.feature
-        %b Título
-        *example*
+  .instructions
+    %span Recuerda que puedes utilizar Markdown para estilizar el conenido.
+    %br/ 
+    %span.feature
+      %b Negritas:
+      *example*
+    %span.feature
+      %b Título
+      *example*
+    %span.feature
+      %b Negritas:
+      *example*
+    %span.feature
+      %b Título
+      *example*
   .buttons
     = f.submit t("articles.new.form.submit"), :class => "btn recomendar"
     =link_to "Preview", "javascript:void(0)", id: "js-preview", class: "btn preview"

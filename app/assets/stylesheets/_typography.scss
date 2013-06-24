@@ -22,12 +22,16 @@ p {
 
 }
 
-code {
+pre {
   background: $codeColor;
   color: #fff;
   padding: 20px;
   display: block;
   border-radius: 5px;
+
+  .s {
+    color: #000;
+  }
 }
 
 .underline {
