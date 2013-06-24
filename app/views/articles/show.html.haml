@@ -30,14 +30,13 @@
         =l l.created_at
         por
         =l.user.username
-#js-comments
-  .coments-container
-    %h3
-      =@article.comments.count
-      Comments
-    =link_to "New Comment", [:new, @commentable, :comment], id: "js-new-comment-link", remote: true
-    - @comments.each do |comment|
-      .coment
-        = image_tag @article.user.gravatar_url, class: 'user-avatar'
-        %span.username= comment.user.username
-        %p= markdown comment.content
+#js-comments.coments-container
+  %h3
+    =@article.comments.count
+    Comments
+  =link_to "New Comment", [:new, @commentable, :comment], id: "js-new-comment-link", remote: true
+  - @comments.each do |comment|
+    .coment
+      = image_tag @article.user.gravatar_url, class: 'user-avatar'
+      %span.username= comment.user.username
+      %p= markdown comment.content

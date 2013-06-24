@@ -1,4 +1,4 @@
-.comment
-  %b= comment.user.username
-  = comment.content
-  %b
+.coment
+  = image_tag article.user.gravatar_url, class: 'user-avatar'
+  %span.username= comment.user.username
+  %p= markdown comment.content
