@@ -1,15 +1,17 @@
-.title
-  = article.title
-.user-creation
-  = image_tag article.user.gravatar_url
-  Creado por
-  = article.user.username
-  el
-  = l article.created_at ? article.created_at : Time.now
-.summary
-  = markdown article.summary
-.content
-  = markdown article.content
-.tags
-  - article.tag_list.each do |t|
-    %span.tag
+.article-container
+  .header-content
+    = image_tag article.user.gravatar_url, class: 'user-avatar'
+    %h2.article-title= article.title
+    %span.date 
+      Creado el 
+      = l article.created_at ? article.created_at : Time.now
+      por
+    %span.username= article.user.username 
+  .info-article
+    %span.leasson Leassons learned
+    %p= article.summary 
+    .tags
+      - article.tag_list.each do |t|
+        %span.tag= t
+  .article-content
+    %p= markdown article.content

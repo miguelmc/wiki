@@ -261,13 +261,21 @@ body {
 
 	.recomendar {
 		background: $action-bg;
-		border-radius: 0px 0px 3px 0px;
-		margin-left: -4px;
+		border: 0;
+		padding: 12px 50px;
 	}
 
 	.comentar {
 		background: #d1d1d1;
 	}
+}
+
+// Diff Logs
+//--------------------------------------------
+
+.log-changes {
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 // Comentarios
@@ -294,7 +302,7 @@ body {
 		padding: 10px 0px 0px 120px;
 		position: relative;
 		min-height: 120px;
-		
+
 		.user-avatar {
 			border-radius: 50%;
 			display: inline-block;
@@ -314,6 +322,16 @@ body {
 	}
 }
 
+.content-comment {
+	input[type="submit"] {
+		background: $action-bg;
+		border: 0;
+		color: #fff;
+		padding: 10px 20px;
+		border-radius: 5px;
+		float: right;
+	}
+}
 // Write Article
 //--------------------------------------------
 
@@ -349,7 +367,7 @@ $perspective: 700;
      	z-index: 800;
   	}
 
-  	&:hover {
+  	&.flip-preview {
     	.write-container { 
       		@include transform(rotateY(180deg)); //No 3D fallback
       		@include transform3d(perspective($perspective) rotateY(180deg)); 
@@ -362,6 +380,26 @@ $perspective: 700;
 	}
 
 	.category {
+
+		label {
+			color: #787878;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-size: 0.8em;
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			border: 0;
+			background: rgba(0,0,0,0.2);
+			padding: 10px;
+			color: #fff;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
 	}
 }
 .article-container {
@@ -435,6 +473,8 @@ $perspective: 700;
 
 		.preview {
 			background: #d1d1d1;
+			margin-left: -4px;
+			border-radius: 0px 0px 3px 0px;
 		}
 	}
 	

@@ -4,6 +4,10 @@
 
 jQuery ->
   $("#js-preview").click (e) ->
+    $(".write").addClass('flip-preview')
+    $('html, body').animate({
+      scrollTop: 0
+    }, 100)
     e.preventDefault()
     url = "/article/preview"
     data = $('#js-article-form').serialize()
@@ -13,6 +17,6 @@ jQuery ->
       type: 'POST'
       dataType: 'html'
       success: (data) ->
-        $('#js-preview-container').html(data)
+        $('.prev-container').html(data)
     )
 

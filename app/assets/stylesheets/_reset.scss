@@ -8,7 +8,6 @@
 
 ul {
   list-style: none;
-
 }
 
 a {
@@ -16,17 +15,19 @@ a {
 
   &:hover {
     cursor: pointer;
-
+  }
 }
 
+input[type="submit: "]  {
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 input, textarea {
-  &:focus {
-    border:             none;
-    outline: none;
-
-}
-
+	&:focus {
+    	border:  none;
+    	outline: none;
+	}
 }
 
