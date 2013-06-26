@@ -19,4 +19,6 @@ jQuery ->
       success: (data) ->
         $('.prev-container').html(data)
     )
-
+  $("#js-back").click (e) ->
+    e.preventDefault()
+    $(".write").removeClass('flip-preview')
