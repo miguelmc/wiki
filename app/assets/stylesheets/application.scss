@@ -521,6 +521,11 @@ $perspective: 700;
 			border: none;
 		}
 
+		input[type="checkbox"] {
+			display: inline-block;
+			width: 20px;
+		}
+
 		input[type="submit"] {
 			background: $action-bg;
 			color: #fff;
