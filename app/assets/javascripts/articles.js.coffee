@@ -19,7 +19,7 @@ jQuery ->
       success: (data) ->
         $('.prev-container').html(data)
     )
-    $.getScript("../assets/application.js")
-  $("#js-back").click (e) ->
+
+  $(".write").on "click", "#js-back", (e) ->
     e.preventDefault()
     $(".write").removeClass('flip-preview')
