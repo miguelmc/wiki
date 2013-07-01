@@ -33,8 +33,10 @@ class Article < ActiveRecord::Base
     last_log.nil? ? audits : audits.where("audits.id != ?", last_log.id)
   end
   def self.search(params = {})
-    if params[:tag].present? && !params[:tag].blank?
+    if params[:tag].present?
       Article.tagged_with(params[:tag])
+    elsif params[:category_id].present?
+      Article.where("articles.category_id = ?", params[:category_id])
     else
       Article.all
     end
