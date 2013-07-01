@@ -23,3 +23,18 @@ jQuery ->
   $(".write").on "click", "#js-back", (e) ->
     e.preventDefault()
     $(".write").removeClass('flip-preview')
+
+  $.cachedScript = (url, options) ->
+    options = $.extend(options || {},
+      dataType: "script",
+      cache: true,
+      url: url
+    )
+
+    return jQuery.ajax(options)
+
+  $(document).on "click", ".next_page", (e) ->
+    e.preventDefault()
+    url = $('#js-comments-pagination .next_page').attr('href')
+    $(this).text("Cargando...")
+    $.cachedScript(url)

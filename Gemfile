@@ -13,6 +13,7 @@ gem "audited-activerecord", "~> 3.0"
 gem 'pygments.rb'
 gem 'redcarpet'
 gem 'gravtastic'
+gem 'will_paginate'
 
 group :development do
   gem 'debugger'

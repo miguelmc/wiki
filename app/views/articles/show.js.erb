@@ -1,0 +1,6 @@
+$('#js-comments').append('<%= j render(@comments, article: @article) %>');
+<% if @comments.next_page %>
+  $('#js-comments-pagination').replaceWith('<%= j will_paginate @comments, page_links: false, previous_label: "", next_label: "Mostrar más", id:"js-comments-pagination" %>');
+<% else %>
+  $('#js-comments-pagination').remove();
+<% end %>

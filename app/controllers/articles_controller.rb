@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @tags = @article.tags.pluck(:name)
     @commentable = @article
-    @comments = @commentable.comments.includes(:user)
+    @comments = @commentable.comments.includes(:user).paginate(page: params[:page], per_page: 5)
     @comment = Comment.new
     @last_log = @article.logs.first
     @logs = @article.logs @last_log
