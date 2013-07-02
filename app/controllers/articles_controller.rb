@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!, except: [:index, :show]
   def index
-    @articles = Article.search params
+    @articles = Article.paginate(page: params[:page], per_page: 5).search(params)
   end
   def new
     @article = current_user.articles.build

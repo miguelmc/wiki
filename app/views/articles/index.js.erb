@@ -1,0 +1,6 @@
+$('#js-articles').append('<%= j render @articles %>');
+<% if @articles.next_page %>
+  $('#js-articles-pagination').replaceWith('<%= j will_paginate @articles, page_links: false, previous_label: "", next_label: "Mostrar más", id:"js-articles-pagination" %>');
+<% else %>
+  $('#js-articles-pagination').remove();
+<% end %>

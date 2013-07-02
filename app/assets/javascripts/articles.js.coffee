@@ -33,8 +33,14 @@ jQuery ->
 
     return jQuery.ajax(options)
 
-  $(document).on "click", ".next_page", (e) ->
+  $(document).on "click", "#js-comments-pagination .next_page", (e) ->
     e.preventDefault()
     url = $('#js-comments-pagination .next_page').attr('href')
+    $(this).text("Cargando...")
+    $.cachedScript(url)
+
+  $(document).on "click", "#js-articles-pagination .next_page", (e) ->
+    e.preventDefault()
+    url = $('#js-articles-pagination .next_page').attr('href')
     $(this).text("Cargando...")
     $.cachedScript(url)

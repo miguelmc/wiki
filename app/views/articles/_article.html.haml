@@ -1,0 +1,10 @@
+.link-item
+  = image_tag article.user.gravatar_url, class: 'user-avatar'
+  = link_to article do
+    %h2= article.title
+  %span.info Creado el 31 de enero del 2012 por:
+  = link_to article.user.username, 'javascript:void(0)', class: 'username'
+  .tags
+    - article.tags.pluck(:name).each do |tag_name|
+      %span.tag= tag_name
+
