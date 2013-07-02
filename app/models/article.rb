@@ -2,13 +2,14 @@
 #
 # Table name: articles
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  summary    :text
-#  content    :text
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  summary     :text
+#  content     :text
+#  user_id     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
 #
 
 class Article < ActiveRecord::Base
@@ -32,6 +33,7 @@ class Article < ActiveRecord::Base
     audits = self.audits.updates.descending.includes(:user)
     last_log.nil? ? audits : audits.where("audits.id != ?", last_log.id)
   end
+
   def self.search(params = {})
     if params[:tag].present?
       Article.tagged_with(params[:tag])
