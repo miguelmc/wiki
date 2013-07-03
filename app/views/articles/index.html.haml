@@ -1,8 +1,8 @@
 %section.links
   -if params[:category_id].present?
-    =Category.find(params[:category_id]).name
+    %h2.tag-category=Category.find(params[:category_id]).name
   -elsif params[:tag].present?
-    =params[:tag]
+    %h2.tag-tag=params[:tag]
 
   .unit#js-articles
     =render @articles

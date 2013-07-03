@@ -49,6 +49,7 @@ body {
 .header {
 	padding: 30px;
 	border-bottom: 1px solid rgba(255,255,255,0.2);
+	box-shadow: inset 0px -2px 0px rgba(0,0,0,0.2);
 	margin-bottom: 50px;
 	
 	.logo {
@@ -166,7 +167,7 @@ body {
 
 	a {
 		display: block;
-		padding: 20px 10px 20px 30px;
+		padding: 20px 20px 20px 30px;
 		color: $text-color;
 		font-weight: 700;
 		border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -286,6 +287,10 @@ body {
 	padding: 30px;
 	border-radius: 3px;
 
+	#js-new-comment {
+		margin-bottom: 50px;
+	}
+
 	h3 {
 		display: inline-block;
 		font-size: 1.5em;
@@ -302,6 +307,7 @@ body {
 		padding: 10px 0px 0px 120px;
 		position: relative;
 		min-height: 120px;
+		display: block;
 
 		.user-avatar {
 			border-radius: 50%;
@@ -322,6 +328,18 @@ body {
 	}
 }
 
+.next_page {
+		color: #fff;
+		padding: 20px;
+		width: 200px;
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		background: rgba(0,0,0,0.2);
+		border-radius: 5px;
+		margin-top: 20px;
+}
+
 .content-comment {
 	input[type="submit"] {
 		background: $action-bg;
@@ -330,6 +348,13 @@ body {
 		padding: 10px 20px;
 		border-radius: 5px;
 		float: right;
+	}
+
+	textarea {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box; 
+		padding: 20px;
 	}
 }
 // Write Article
@@ -597,8 +622,15 @@ $perspective: 700;
 .links {
 	display: inline-block;
 	color: #fff;
-  width: 100%;
-
+  	width: 100%;
+	
+	.tag-category, .tag-tag {
+		background: rgba(0,0,0,0.3);
+		display: inline-block;
+		padding: 10px;
+		border-radius: 3px;
+		margin-bottom: 10px;
+	}
 
 	.link-item {
 		background: $dark-bg;
