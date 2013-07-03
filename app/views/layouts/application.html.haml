@@ -22,6 +22,9 @@
             = form_tag articles_path, method: :get do
               = text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
               %span.icon 
+      .alerts
+        %p.notice= notice
+        %p.alert= alert
     %section.page.container.center
       .col-1
         %nav.side-menu
@@ -32,5 +35,3 @@
       .col-2
         .unit
           = yield
-    -#%p.notice= notice
-    -#%p.alert= alert

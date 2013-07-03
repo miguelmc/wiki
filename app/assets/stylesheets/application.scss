@@ -44,6 +44,41 @@ body {
 	background-size: 100% 100%;
 }
 
+.alerts {
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+
+.notice {
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 20px;
+	border-radius: 2px;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	-webkit-animation: show 2s ease ;
+}
+
+.alert {
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 20px;
+	border-radius: 2px;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	-webkit-animation: show 2s ease ;
+}
+
+@-webkit-keyframes show {
+	0% {opacity: 0;}
+	50% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
 // Header & Nav
 //--------------------------------------------
 .header {
@@ -167,11 +202,12 @@ body {
 
 	a {
 		display: block;
-		padding: 20px 20px 20px 30px;
+		padding: 20px 40px 20px 30px;
 		color: $text-color;
 		font-weight: 700;
 		border-bottom: 1px solid rgba(0,0,0,0.2);
 		background: url(arrow.png) 90% 55% no-repeat;
+		box-sizing: box-border;
 	}
 
 	.actionbutton {
@@ -244,6 +280,8 @@ body {
 		border-top: 1px solid rgba(0,0,0,0.2);
 		margin-bottom: 40px;
 		padding: 20px 0px;
+		max-height: 200px;
+		overflow-y: scroll;
 
 		span {
 			display: block;
@@ -268,6 +306,13 @@ body {
 
 	.comentar {
 		background: #d1d1d1;
+	}
+
+	.edit {
+		background: #d1d1d1;
+		display: inline-block;
+		padding: 12px 50px;
+		color: #fff;
 	}
 }
 

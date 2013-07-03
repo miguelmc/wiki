@@ -30,6 +30,8 @@
         =l l.created_at
         por
         =l.user.username
+  .buttons
+    =link_to "Editar", edit_article_path(@article), class: 'edit'
 #js-comments.coments-container
   %h3
     =@article.comments.count
