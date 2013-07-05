@@ -23,10 +23,8 @@
               = text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
               = submit_tag '', class:'icon', value: ''
       .alerts
-        -if flash[:notice]
-          %p.notice= notice
-        -if flash[:alert]
-          %p.alert= alert
+        -flash.each do |key, msg|
+          = content_tag :p, msg, :class => key
     %section.page.container.center
       .col-1
         %nav.side-menu
