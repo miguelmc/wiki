@@ -9,11 +9,12 @@ describe 'new article' do
   end
 
   it "created succesfully" do
-    fill_in t("articles.new.form.title"), with: "Article's title"
-    fill_in t("articles.new.form.summary"), with: "This is the summary for the article"
-    fill_in t("articles.new.form.content"), with: "Here you have the content for the article."
-    select @category.name, from: t("articles.new.form.category")
-    click_on t("articles.new.form.submit")
+    fill_in 'article[title]', with: "Article's title"
+    fill_in 'article[summary]', with: "This is the summary for the article"
+    select @category.name, from: 'article[category_id]'
+    fill_in 'article[content]', with: "Here you have the content for the article."
+
+    click_on 'Crear'
     page.should have_content t("articles.new.messages.success.saved")
   end
   context "when user is not signed in" do
@@ -39,22 +40,22 @@ describe 'a created article' do
       click_link "Preview"
     end
     it "should display article's information on the same page" do
-      within "#js-preview-container" do
-        page.should have_css('.title')
-        page.should have_css('.user-creation')
-        page.should have_css('.summary')
-        page.should have_css('.content')
-        page.should have_css('.tags')
+      within ".flip-preview" do
+        page.should have_css('.header-content')
+        page.should have_css('.info-article')
+        page.should have_css('.article-content')
+        page.should have_css('.instructions')
+        page.should have_css('.buttons')
       end
     end
   end
   context "succesfully edited" do
     it "should update content" do
-      fill_in t("articles.edit.form.title"), with: "Article's new title"
-      fill_in t("articles.edit.form.summary"), with: "This is the new summary for the article"
-      fill_in t("articles.edit.form.content"), with: "Here you have the new content for the article."
-      select @category.name, from: t("articles.new.form.category")
-      click_on t("articles.edit.form.submit")
+      fill_in 'article[title]', with: "Article's new title"
+      fill_in 'article[summary]', with: "This is the new summary for the article"
+      fill_in 'article[content]', with: "Here you have the new content for the article."
+      select @category.name, from: 'article[category_id]'
+      click_on 'Crear'
       page.should have_content t("articles.edit.messages.success.saved")
     end
   end
@@ -64,8 +65,8 @@ describe 'a created article' do
       visit articles_path
     end
     it "should show a list of recent articles" do
-       within ".articles" do
-        page.should have_css('.article', count: 2)
+       within "#js-articles" do
+        page.should have_css('.link-item', count: 2)
       end
 
     end
@@ -74,14 +75,14 @@ end
 describe "an existing article" do
   context "when has comments" do
     before do
-      @article = FactoryGirl.create(:article_with_category)
+      @article = FactoryGirl.create(:article)
       @comment = FactoryGirl.create(:comment, commentable: @article)
       @category = @article.category
       visit article_path @article
     end
     it "should show them" do
-       within ".comments" do
-        page.should have_css('.comment', count: 1)
+       within "#js-comments" do
+        page.should have_css('.coment', count: 1)
       end
     end
   end
@@ -94,17 +95,17 @@ describe "search" do
   end
   it "should show one article" do
     fill_in "tag", with: "ruby"
-    click_on t("search.form.submit")
-    within ".articles" do
-      page.should have_css('.article', count: 1)
+    click_on "search"
+    within "#js-articles" do
+      page.should have_css('.link-item', count: 1)
     end
   end
   context "when user searches for no tag" do
     it "should show all" do
       fill_in "tag", with: ""
-      click_on t("search.form.submit")
-      within ".articles" do
-        page.should have_css('.article', count: 2)
+      click_on "search"
+      within "#js-articles" do
+        page.should have_css('.link-item', count: 2)
       end
     end
   end

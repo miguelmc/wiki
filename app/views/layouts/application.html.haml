@@ -21,7 +21,7 @@
           .search-box
             = form_tag articles_path, method: :get do
               = text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
-              %span.icon 
+              = submit_tag '', class:'icon', value: 'search'
       .alerts
         %p.notice= notice
         %p.alert= alert
