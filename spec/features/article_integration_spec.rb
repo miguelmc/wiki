@@ -95,7 +95,7 @@ describe "search" do
   end
   it "should show one article" do
     fill_in "tag", with: "ruby"
-    click_on "search"
+    page.find(".icon").click
     within "#js-articles" do
       page.should have_css('.link-item', count: 1)
     end
@@ -103,7 +103,7 @@ describe "search" do
   context "when user searches for no tag" do
     it "should show all" do
       fill_in "tag", with: ""
-      click_on "search"
+      page.find(".icon").click
       within "#js-articles" do
         page.should have_css('.link-item', count: 2)
       end
