@@ -135,7 +135,7 @@ body {
 			.search {
 				padding: 10px 30px 10px 10px;
 				border-radius: 3px 0px 0px 3px;
-				border: none;
+				border: 0;
 				transition: all .5s ease;
 				min-width: 170px;
 
@@ -145,10 +145,14 @@ body {
 				}
 			}
 
+			 input[type="submit"] {
+			 	border: 0;
+			 }
+
 			.icon {
 				background: url(search.png) $dark-bg no-repeat;
 				background-position: center;
-				padding: 20px 20px;
+				padding: 10px 20px;
 				position: relative;
 				float: right;
 				top: -38px;
