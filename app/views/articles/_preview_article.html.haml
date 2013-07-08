@@ -9,11 +9,11 @@
     %span.username= article.user.username 
   .info-article
     %span.leasson Leassons learned
-    %p= article.summary 
+    %p= find_and_preserve markdown article.summary 
     .tags
       - article.tag_list.each do |t|
         %span.tag= t
   .article-content
-    %p= markdown article.content
+    %p= find_and_preserve markdown article.content
   .buttons
     =link_to "Regresar", "javascript:void(0)", id:"js-back", class:"btn recomendar"
