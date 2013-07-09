@@ -23,5 +23,6 @@ FactoryGirl.define do
     category_id {
       category = FactoryGirl.create(:category)
       category.id }
+    tag_list "ruby, heroku, a la github"
   end
 end
