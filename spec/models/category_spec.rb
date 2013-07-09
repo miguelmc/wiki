@@ -18,13 +18,5 @@ describe Category do
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
   it { should have_many(:articles) }
-
-   describe "accessible attributes" do
-    it "should not allow access to name" do
-      expect do
-        Category.new(name: category.name)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end
-  end
 end
 
