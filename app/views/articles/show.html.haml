@@ -36,6 +36,9 @@
   %h3
     =@article.comments.count
     Comments
-  =link_to "New Comment", [:new, @commentable, :comment], id: "js-new-comment-link", remote: true
+  -unless current_user
+    =link_to "New Comment", new_user_session_path
+  -else
+    =link_to "New Comment", [:new, @commentable, :comment], id: "js-new-comment-link", remote: true
   =render @comments, article: @article
 =will_paginate @comments, page_links: false, previous_label: "", next_label: "Mostrar más", id:"js-comments-pagination"
