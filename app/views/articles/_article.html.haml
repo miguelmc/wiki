@@ -6,5 +6,6 @@
   = link_to article.user.username, 'javascript:void(0)', class: 'username'
   .tags
     - article.tags.pluck(:name).each do |tag_name|
-      %span.tag= tag_name
+      %span.tag= link_to tag_name, articles_path(tag: tag_name)
+
 
