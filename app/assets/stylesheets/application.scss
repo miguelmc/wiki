@@ -19,6 +19,9 @@
 //Fonts
 @import 'fonts';
 
+//Fonts
+@import 'markdown';
+
 //Plugins
 //----------------------------
 
@@ -46,7 +49,7 @@ body {
 
 .alerts {
 	width: 50%;
-	margin: 0 auto;
+	margin: 25px auto;
 	display: block;
 	text-align: center;
 }
@@ -69,12 +72,6 @@ body {
 	margin: 0 auto;
 	display: block;
 	-webkit-animation: show 2s ease ;
-}
-
-@-webkit-keyframes show {
-	0% {opacity: 0;}
-	50% {opacity: 1;}
-	100% {opacity: 0;}
 }
 
 // Header & Nav

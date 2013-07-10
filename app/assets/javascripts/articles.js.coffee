@@ -18,7 +18,7 @@ jQuery ->
       dataType: 'html'
       success: (data) ->
         $('.prev-container').html(data)
-    )
+    )  
 
   $(".write").on "click", "#js-back", (e) ->
     e.preventDefault()
