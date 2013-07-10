@@ -20,7 +20,7 @@
             = link_to t("users.session.button.login"), new_user_session_path
           .search-box
             = form_tag articles_path, method: :get do
-              = text_field_tag :tag, params[:tag], placeholder: "Search by tag", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
+              = text_field_tag :tag, params[:tag], placeholder: "Buqueda por tags", data: { tags: ActsAsTaggableOn::Tag.pluck(:name) }, class: 'search'
               = submit_tag '', class:'icon', value: ''
       .alerts
         -flash.each do |key, msg|
