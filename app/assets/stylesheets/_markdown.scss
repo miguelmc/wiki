@@ -1,53 +1,52 @@
-h1, h2, h3 {
-  line-height:1.1;
-  text-transform: capitalize;
-}
-
 .article-content {
-	a {
-		color: tomato;
-		display: inline-block;
-	}
-}
+  h1, h2, h3 {
+    line-height:1.1;
+    text-transform: capitalize;
+  }
 
+  a {
+  	color: tomato;
+  	display: inline-block;
+  }
 
-table {
-  width:100%;
-  border-collapse:collapse;
-  background: rgba(0,0,0,0.1);
-  border-radius: 5px;
-}
+  table {
+    width:100%;
+    border-collapse:collapse;
+    background: rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
 
-table thead tr {
-	background: rgba(0,0,0,0.06);
-}
+  table thead tr {
+  	background: rgba(0,0,0,0.06);
+  }
 
-table tbody tr:nth-child(odd) {
-	background: #eeeee2;	
-}
+  table tbody tr:nth-child(odd) {
+  	background: #eeeee2;	
+  }
 
-table tbody tr:nth-child(even) {
-	background: #f6f6ee;
-}
+  table tbody tr:nth-child(even) {
+  	background: #f6f6ee;
+  }
 
-th, td {
-  text-align:left;
-  padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
-}
+  th, td {
+    text-align:left;
+    padding:5px 10px;
+    border-bottom:1px solid #e5e5e5;
+  }
 
-dt {
-  color:#444;
-  font-weight:700;
-}
+  dt {
+    color:#444;
+    font-weight:700;
+  }
 
-th {
-  color:#444;
-}
+  th {
+    color:#444;
+  }
 
-hr {
-  border:0;
-  background: rgba(0,0,0,0.3);
-  height:1px;
-  margin:0 0 20px;
+  hr {
+    border:0;
+    background: rgba(0,0,0,0.3);
+    height:1px;
+    margin:0 0 20px;
+  }
 }

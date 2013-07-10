@@ -706,6 +706,15 @@ $perspective: 700;
 		.tags {
 			margin-top: 10px;
 		}
+
+		.summary {
+			display: block;
+			font-weight: 100;
+			font-style: italic;
+			color: rgba(255,255,255,0.4);
+			padding-left: 1%;
+			border-left: 1px solid rgba(255,255,255,0.1);
+		}
 	}
 }
 
