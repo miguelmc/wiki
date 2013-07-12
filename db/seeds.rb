@@ -1,3 +1,4 @@
+# encoding: utf-8
 Category.create(name: "Plug-ins")
 Category.create(name: "Móvil")
 Category.create(name: "UI/UX")
