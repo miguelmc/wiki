@@ -14,6 +14,7 @@ gem 'pygments.rb'
 gem 'redcarpet'
 gem 'gravtastic'
 gem 'will_paginate'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'debugger'
