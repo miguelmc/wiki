@@ -1,3 +1,17 @@
+- set_meta_tags :description => @article.summary
+- set_meta_tags :title => @article.title
+- set_meta_tags "og:title" => @article.title
+- set_meta_tags "og:type" => "article"
+- set_meta_tags "og:image" => "http://wiki.icalialabs.com/assets/logo-3cc30f934858ec18f28a9051e7208ff0.png"
+- set_meta_tags "og:url" => "http://wiki.icalialabs.com"
+- set_meta_tags "og:description" => @article.summary
+- set_meta_tags "fb:admins" => "632145692"
+- set_meta_tags "twitter:card" => "summary"
+- set_meta_tags "twitter:url" => request.url
+- set_meta_tags "twitter:title" => @article.title
+- set_meta_tags "twitter:description" => @article.summary
+- set_meta_tags "twitter:image" => "http://wiki.icalialabs.com/assets/logo-3cc30f934858ec18f28a9051e7208ff0.png"
+
 .article-container
   .header-content
     = image_tag @article.user.gravatar_url, class: 'user-avatar'

@@ -128,6 +128,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.5.0)
+      actionpack
     mime-types (1.23)
     multi_json (1.7.2)
     netrc (0.7.7)
@@ -244,6 +246,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   letter_opener
+  meta-tags
   newrelic_rpm
   nyan-cat-formatter
   pg

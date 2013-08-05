@@ -15,6 +15,7 @@ gem 'redcarpet'
 gem 'gravtastic'
 gem 'will_paginate'
 gem 'newrelic_rpm'
+gem 'meta-tags', :require => 'meta_tags'
 
 group :development do
   gem 'debugger'
