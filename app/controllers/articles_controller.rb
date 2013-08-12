@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.build(params[:article])
+    users = User.all
     if @article.save
+      users.each do |u|
+        UpdatesMailer.new_article(u, @article).deliver
+      end
       redirect_to @article, flash: { notice: t("articles.new.messages.success.saved")}
     else
       render "new"
@@ -22,7 +26,11 @@ class ArticlesController < ApplicationController
   end
   def update
     @article = Article.find(params[:id])
+    users = User.all
     if @article.update_attributes(params[:article])
+       users.each do |u|
+         UpdatesMailer.article_updated(u, @article).deliver
+       end
        redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
     else
       render 'edit'
