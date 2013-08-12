@@ -23,4 +23,8 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
+
+  def user_is_admin?
+    current_user && current_user.admin?
+  end
 end

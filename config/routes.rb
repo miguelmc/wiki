@@ -8,6 +8,7 @@ Wiki::Application.routes.draw do
     resources :comments
     resources :audits
   end
+  resources :users
 
   post 'article/preview' => 'articles#preview'
   put 'article/preview' => 'articles#preview'

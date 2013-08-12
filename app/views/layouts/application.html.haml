@@ -16,6 +16,8 @@
           - if user_signed_in?
             %span.welcome Logged in as
             %strong= current_user.username
+            - if user_is_admin?
+              = link_to "Admin tools", "javascript:void(0)", class: 'logout'
             = link_to t("users.session.button.logout"), destroy_user_session_path, method: :delete, class: 'logout'
           - else
             = link_to t("users.session.button.login"), new_user_session_path
