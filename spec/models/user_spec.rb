@@ -35,6 +35,19 @@ describe User do
 	it { should validate_presence_of(:username) }
 	it { should validate_uniqueness_of(:username) }
 
+  it { should respond_to(:admin) }
 
+  it { should be_valid }
+  it { should_not be_admin }
+
+
+  describe "as an admin" do
+    before do
+      user.save!
+      user.toggle!(:admin)
+    end
+
+    it { should be_admin }
+  end
 
 end
