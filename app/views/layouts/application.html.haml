@@ -1,3 +1,7 @@
+- set_meta_tags "og:image" => image_with_host("full_logo.png")
+- set_meta_tags "twitter:image" => image_with_host("full_logo.png")
+- set_meta_tags "og:url" => request.url
+
 !!!
 %html
   %head
@@ -7,6 +11,7 @@
     = stylesheet_link_tag    "application", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", :media => "all"
     = javascript_include_tag "application", "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
     = csrf_meta_tags
+
   %body
     .header
       .container.center
