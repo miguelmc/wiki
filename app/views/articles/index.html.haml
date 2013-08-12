@@ -1,3 +1,5 @@
+- set_meta_tags :description => 'Articulos de conocimiento sobre software publicados por el equipo de IcaliaLabs en Monterrey'
+- set_meta_tags :title => 'Lista de articulos'
 %section.links
   -if params[:category_id].present?
     %h2.tag-category=Category.find(params[:category_id]).name

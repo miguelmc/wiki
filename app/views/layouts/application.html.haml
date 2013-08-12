@@ -1,8 +1,9 @@
 !!!
 %html
   %head
-    %title Icalia Wiki
+    = display_meta_tags :site => 'Wiki de IcaliaLabs'
     %meta{:charset => "utf-8"}
+    %meta{:author => 'http://www.icalialabs.com'}
     = stylesheet_link_tag    "application", "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", :media => "all"
     = javascript_include_tag "application", "http://code.jquery.com/ui/1.10.3/jquery-ui.js"
     = csrf_meta_tags
