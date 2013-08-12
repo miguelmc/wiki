@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def image_with_host(image_name)
-    "#{request.host_with_port}#{image_path(image_name)}"
+    "http://#{request.host_with_port}#{image_path(image_name)}"
   end
 
 end
