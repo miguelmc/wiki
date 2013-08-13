@@ -1,0 +1,10 @@
+- @users.each do |user|
+  .link-item
+    = #image_tag user.gravatar_url, class: 'user-avatar'
+    %span.info
+      = user.username
+    %span
+      = link_to "Edit", edit_user_path(user)
+      |
+      = link_to "Delete", user, method: :delete,
+                                  data: { confirm: "You sure?" }

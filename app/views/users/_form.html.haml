@@ -1,0 +1,13 @@
+= form_for(@user) do |f|
+  .header-content
+    = f.text_field :username, class: 'article-title', :placeholder => "Username"
+  .info-article
+    .summary
+      = f.text_field :email, class: 'leassons', :placeholder => "Email"
+    .summary
+      = f.text_field :password, class: 'leassons', :placeholder => "Password"
+    .summary
+      = f.text_field :password, class: 'leassons', :placeholder => "Password confirmation"
+
+  .buttons
+    = f.submit t("articles.new.form.submit"), :class => "btn recomendar"

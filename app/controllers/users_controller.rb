@@ -6,13 +6,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.build
+    @user = User.new(params[:user])
   end
 
   def create
-    @user = User.build(params[:user])
+    @user = User.new(params[:user])
     if @user.save
-      redirect_to @users, flash: { notice: "User successfully created" }
+      redirect_to users_path, flash: { notice: "User successfully created" }
     else
       render "new"
     end
@@ -25,10 +25,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      redirect_to @users, flash: { notice: "User successfully modified" }
+      redirect_to users_path, flash: { notice: "User successfully modified" }
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to users_path, flash: { notice: "User successfully deleted" }
   end
 
   private
