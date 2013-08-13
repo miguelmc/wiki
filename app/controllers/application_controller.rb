@@ -2,10 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def is_admin?
-    if current_user && current_user.admin?
-      true
-    else
-      redirect_to root_path, flash: { alert: "You're not allowed" }
-    end
+    redirect_to root_path, flash: { alert: "You're not allowed" } unless user_is_admin?
   end
+
+  def user_is_admin?
+    user_signed_in? && current_user.admin?
+  end
+
+  helper_method :user_is_admin?
 end
