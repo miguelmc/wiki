@@ -26,12 +26,8 @@ class ArticlesController < ApplicationController
   end
   def update
     @article = Article.find(params[:id])
-    users = User.all
     if @article.update_attributes(params[:article])
-       users.each do |u|
-         UpdatesMailer.article_updated(u, @article).deliver
-       end
-       redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
+      redirect_to @article, flash: { notice: t("articles.edit.messages.success.saved")}
     else
       render 'edit'
     end
