@@ -43,4 +43,8 @@ class Article < ActiveRecord::Base
       Article.all
     end
   end
+
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
 end
