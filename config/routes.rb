@@ -9,6 +9,7 @@ Wiki::Application.routes.draw do
     resources :audits
   end
   resources :users
+  resources :categories
 
   post 'article/preview' => 'articles#preview'
   put 'article/preview' => 'articles#preview'

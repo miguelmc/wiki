@@ -1,0 +1,5 @@
+= form_for(@category) do |f|
+  .header-content
+    = f.text_field :name, class: 'article-title', :placeholder => "Category name"
+  .buttons
+    = f.submit t("articles.new.form.submit"), :class => "btn recomendar"

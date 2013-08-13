@@ -35,13 +35,4 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     redirect_to users_path, flash: { notice: "User successfully deleted" }
   end
-
-  private
-    def is_admin?
-      if current_user && current_user.admin?
-        true
-      else
-        redirect_to root_path, flash: { alert: "You're not allowed" }
-      end
-    end
 end
